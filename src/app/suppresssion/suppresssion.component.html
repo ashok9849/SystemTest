@@ -1,0 +1,54 @@
+<div class = "data-heading">
+    <div class = "data-heading-left">
+        <h5 class = "data-header">Total Suppression Records :</h5>
+    </div>
+    <div class = "data-heading-right">
+        <input type="text" placeholder="Search.." style = "float:left">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">List Action
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Create Supression Link</a></li>
+              <li><a href="#">Add Suppression Email</a></li>
+              <li><a href="#">Remove Suppression Email</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>S.No</th>
+        <th>Supression List Name</th>
+        <th>Last Modified on</th> 
+        <th>Last Modified By</th>
+        <th>Records</th>
+        <th>Mail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <tr *ngFor="let game of games | paginate: {itemsPerPage: 5, currentPage:page, id: '1'};  let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{game.AlreadyContacted}}</td>
+        <td>{{game.ModifiedDate}}</td>
+        <td>{{game.ModifiedBy}}</td>
+        <td>{{game.Record}}</td>
+        <td><i class="fa fa-envelope" aria-hidden="true"></i></td>
+        <td><i class="fa fa-pencil" aria-hidden="true" (click) = "edit(game)"></i></td>
+        <td><i class="fa fa-trash" aria-hidden="true" (click) = "delete(i)"></i></td>
+    </tr>
+</table>
+
+<!-- <pagination-controls (pageChange)="page = $event" id="1"
+      maxSize="5"
+      directionLinks="true"
+      autoHide="true">
+</pagination-controls> -->
+<app-custom-pagination class = "paginations" (pageChange)="page = $event" id="1"
+      maxSize="5"
+      directionLinks="true"
+      autoHide="true">  
+ </app-custom-pagination>

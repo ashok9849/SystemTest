@@ -1,0 +1,31 @@
+.nav{
+    /* width:95%;
+    margin:0 auto; */
+    background-color: #d3f5e6;
+}
+.navigation ul {
+    list-style-type: none;
+    width: 95%;
+    margin: 0 auto;
+}
+.navigation ul li{
+    display: inline;
+}
+.navigation li a{
+    margin-left:10px;
+    margin-right:10px
+}
+.navigation{
+    margin-top:25px;
+    margin-bottom:25px ;
+}
+.navigation hr{
+    border-top: 2px solid rgba(0,0,0,.1);
+    margin-top: 0px;
+    margin-bottom: 0rem;
+    /* width:100%; */
+}
+.navigation[_ngcontent-wuk-c50]{
+    width:95%
+}
+
